@@ -98,11 +98,21 @@ const Profile = ({ route, navigation }) => {
             <Text style={styles.cardLabel}>Gists</Text>
             <Text style={styles.cardCount}>{userInfos.public_gists}</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.card}>
+          <TouchableOpacity
+            style={styles.card}
+            onPress={() => {
+              navigation.navigate("Following", { login });
+            }}
+          >
             <Text style={styles.cardLabel}>Following</Text>
             <Text style={styles.cardCount}>{userInfos.following}</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.card}>
+          <TouchableOpacity
+            style={styles.card}
+            onPress={() => {
+              navigation.navigate("Followers", { login });
+            }}
+          >
             <Text style={styles.cardLabel}>Followers</Text>
             <Text style={styles.cardCount}>{userInfos.followers}</Text>
           </TouchableOpacity>
